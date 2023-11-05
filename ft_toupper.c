@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
+/*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 20:57:30 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/05 16:24:30 by zmourid          ###   ########.fr       */
+/*   Created: 2023/11/05 15:38:52 by zmourid           #+#    #+#             */
+/*   Updated: 2023/11/05 15:42:21 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
-	return (c >= '0' && c <= '9');
+	if (ft_isalpha(c) && c <= 'z')
+		return (c - 32);
+	return (c);
 }
