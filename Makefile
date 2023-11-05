@@ -1,7 +1,7 @@
 CMP = cc
 FLAGS = -Wall -Werror -Wextra
 NAME = libft.a
-files = ft_strlen ft_memcpy ft_memset ft_bzero ft_memmove ft_memcmp ft_memchr
+files = ft_strlen ft_memcpy ft_memset ft_bzero ft_memmove ft_memcmp ft_memchr ft_isalpha ft_isdigit ft_isalnum ft_isascii
 CFILES = $(addsuffix .c , $(files))
 OFILES = $(addsuffix .o , $(files))
 all:
@@ -11,7 +11,7 @@ all:
 main: all
 	$(CMP) $(FLAGS) main.c -L. -lft -o main
 clean: 
-	rm -rf *.o 
+	rm -rf $(OFILES) 
 fclean: clean 
 	rm -rf $(NAME)
 re: fclean all
