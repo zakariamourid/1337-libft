@@ -1,13 +1,9 @@
 #include<stdio.h>
 int main(void)
 {
-    char a='A';
-    while(a)
-    {
-        printf("%d = %c\n", a, a);
-        a++;
-    }
-    /* 0 is NULL */
-    printf("%d = NULL", a);
+    char a[]="ABC";
+	char *b = a;
+	a[0] = b[0];
+    printf("%s = text", b);
     return 0;
 }

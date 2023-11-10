@@ -11,8 +11,9 @@ int main()
 //  printf("memmove = %s\n",(char *)memmove(dst2, src2 ,6));
   //here it solves the overlap problem when u try to copy a changed byte to a dest
   
-  printf("ft_memove = %s\n",(char *)ft_memmove(src + 3, src ,3));
-  printf("memmove = %s\n",(char *)memmove(src2 + 3, src2 ,3));
-  printf("str = %s\n" src);
+  printf("ft_memove = %d\n",(int )ft_memmove(src + 3, src ,3));
+  printf("memmove = %d\n",(int )memmove(src2 + 3, src2 ,3));
+  printf("str ft = %s\n" ,src);
+  printf("str2 = %s\n" ,src2);
 }
 

@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 15:19:44 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/06 18:01:45 by zmourid          ###   ########.fr       */
+/*   Created: 2023/11/07 00:29:59 by zmourid           #+#    #+#             */
+/*   Updated: 2023/11/07 00:34:21 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+char	*ft_strdup(const char *s1)
 {
-	unsigned char	*s;
-	unsigned char	*d;
+	size_t	s_len;
+	char	*data;
 
-	if (!dst && !src)
-		return (dst);
-	s = (unsigned char *)src;
-	d = (unsigned char *)dst;
-	while (n--)
-		*d++ = *s++;
-	return (dst);
+	s_len = ft_strlen(s1);
+	data = malloc(s_len + 1);
+	if (!data)
+	{
+		errno = ENOMEM;
+		return (NULL);
+	}
+	ft_memcpy(data, s1, s_len + 1);
+	return (data);
 }

@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 15:19:44 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/06 18:01:45 by zmourid          ###   ########.fr       */
+/*   Created: 2023/11/07 02:58:08 by zmourid           #+#    #+#             */
+/*   Updated: 2023/11/07 21:25:35 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	*s;
-	unsigned char	*d;
+	char	*str;
 
-	if (!dst && !src)
-		return (dst);
-	s = (unsigned char *)src;
-	d = (unsigned char *)dst;
-	while (n--)
-		*d++ = *s++;
-	return (dst);
+	str = (char *)malloc(len);
+	if (!str)
+		return (NULL);
+	ft_memcpy(str, s + start, len);
+	return (str);
 }

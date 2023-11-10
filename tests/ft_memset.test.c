@@ -2,8 +2,10 @@
 
 int main()
 {
-  char dst[100] = "hello world";
-  char dst2[100] = "hello world";
-  printf("ft_memset = %s\n",(char *)ft_memset(dst ,'z',4));
-  printf("memset = %s\n",(char *)memset(dst2,'z' ,4));
+  int logo = 0;
+  char *ptr = &logo;
+  printf("logo = %d \n" ,logo);
+	memset(&ptr[0],57 ,1);
+	memset(&ptr[1],5 ,1);
+  printf("logo = %d \n" ,logo);
 }

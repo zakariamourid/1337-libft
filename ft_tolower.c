@@ -6,7 +6,7 @@
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 15:43:06 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/05 15:43:25 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/06 23:40:07 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	if (ft_isalpha(c) && c <= 'Z')
+	if (ft_isalpha(c) && (c >= 'A' && c <= 'Z'))
 		return (c + 32);
 	return (c);
 }
