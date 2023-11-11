@@ -1,9 +1,8 @@
 #include <stdio.h>
-
+#include <string.h>
 int main()
 {
-	char *s = "hello";
-	char *d = "hella";
-	printf("add of s = %d \n",s);
-	printf("add of d = %d \n",d);
+  char dest[20];
+  memset(dest, 'r', 15);
+    strlcat(dest, "lorem ipsum dolor sit amet", 5);
 }

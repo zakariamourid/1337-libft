@@ -1,7 +1,7 @@
 #include "../libft.h"
 
-int main()
+int	main(void)
 {
-  printf("memchr = %s \n",(char *)memchr("hello",'l',5));
-  printf("ft_memchr = %s \n",(char *)ft_memchr("hello",'l',5));
+	printf("memchr = %s \n", (char *)memchr("hello", 'l', 5));
+	printf("ft_memchr = %s \n", (char *)ft_memchr("hello", 'l', 5));
 }

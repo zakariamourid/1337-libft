@@ -1,9 +1,9 @@
-#include<stdio.h>
+#include "libft.h"
 int main(void)
 {
     char a[]="ABC";
-	char *b = a;
-	a[0] = b[0];
-    printf("%s = text", b);
+	char *dest = NULL;
+    printf(" %d \n ", strlcat(a,a,4));
+    printf(" %d \n ", ft_strlcat(a,a,4));
     return 0;
 }

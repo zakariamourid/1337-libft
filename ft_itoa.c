@@ -34,7 +34,7 @@ static int	get_size(int n)
 char	*ft_itoa(int n)
 {
 	int		len;
-	long nbr;
+	long	nbr;
 	int		is_negative;
 	char	*res;
 
