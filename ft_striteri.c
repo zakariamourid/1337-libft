@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 21:46:19 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/13 15:53:42 by zmourid          ###   ########.fr       */
+/*   Created: 2023/11/13 22:55:40 by zmourid           #+#    #+#             */
+/*   Updated: 2023/11/13 23:02:49 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void ft_striteri(char *s,void(*f)(unsigned int,char *))
 {
-	write(fd, &c, 1);
+	size_t	i;
+	if(!s || !f)
+		return ;
+	while(str[i])
+	{
+		str[i] = (*f)(i,str);
+		i++;
+	}
 }
-
-
-int main()
-{
-	int fd = open("test3.txt",O_WRONLY);
-	ft_putchar_fd('d',fd);
-	printf("second main fd  = %d \n",fd);
-	while(1);
-}
-
