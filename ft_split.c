@@ -10,49 +10,54 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
 #include <stdlib.h>
-int count_words(char const *s ,char c)
+
+int	count_words(char const *s, char c)
 {
-	int i =0;
-	int count = 0;
-	while(s[i])
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (s[i])
 	{
-		if(s[i] != c)
+		if (s[i] != c)
 		{
 			count++;
-			while(s[i] != c && s[i])
+			while (s[i] != c && s[i])
 			{
 				i++;
 			}
 		}
-		else{
+		else
+		{
 			i++;
 		}
 	}
-	return count;
+	return (count);
 }
 
-int *ft_split(char const *s, char c)
+int	*ft_split(char const *s, char c)
 {
-	int len;
-	char **str;
+	int		len;
+	char	**str;
 
-	len = count_words(s,c)
-	if(!(str = (char **) malloc(sizeof(char *) * len + 1)))
-			return NULL;
-	printf(" len = %d \n ",len);
-	while(*str == c)
+	len = count_words(s, c) if (!(str = (char **)malloc(sizeof(char *) * len
+					+ 1))) return (NULL);
+	printf(" len = %d \n ", len);
+	while (*str == c)
 		str++;
-	while(*str)
+	while (*str)
 	{
-		len 
+		len
 	}
-	return NULL;
+	return (NULL);
 }
-int main()
+int	main(void)
 {
-	char str[] = "hello,world";
-	ft_split(str,',');
+	char	str[];
+
+	str[] = "hello,world";
+	ft_split(str, ',');
 }
