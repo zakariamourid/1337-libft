@@ -6,7 +6,7 @@
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:45:14 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/14 16:32:29 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/14 21:59:50 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = malloc(sizeof(char) * (end - start + 2));
 	if (!str)
 		return (NULL);
-	strlcpy(str, s1 + start, end - start + 2);
+	ft_strlcpy(str, s1 + start, end - start + 2);
 	return ((char *)str);
 }

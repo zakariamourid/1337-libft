@@ -6,18 +6,23 @@
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 23:50:16 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/14 17:07:43 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/14 22:02:22 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <errno.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+} t_list;
 
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
