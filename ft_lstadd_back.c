@@ -6,7 +6,7 @@
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 22:37:37 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/14 22:42:59 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/14 22:52:27 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_lstadd_back(t_list **lst,t_list *new)
 		return ;
 	}
 	*lst = ft_lstlast(*lst);
-	*lst->next = new;
+	**lst->next = new;
 }

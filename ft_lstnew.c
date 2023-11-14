@@ -6,7 +6,7 @@
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 22:04:48 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/14 22:16:59 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/14 22:51:47 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ t_list *ft_lstew(void *content)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
-	retunr new;
+	return new;
 }
