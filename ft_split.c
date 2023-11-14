@@ -6,7 +6,7 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 23:18:30 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/13 14:59:29 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/14 16:47:29 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,16 @@ int	*ft_split(char const *s, char c)
 	int		len;
 	char	**str;
 
-	len = count_words(s, c) if (!(str = (char **)malloc(sizeof(char *) * len
-					+ 1))) return (NULL);
+	len = count_words(s, c);
+	str = (char **)malloc(sizeof(char *) * (len+ 1));
+	if(!str)
+		return (NULL);
 	printf(" len = %d \n ", len);
 	while (*str == c)
 		str++;
 	while (*str)
 	{
-		len
+		
 	}
 	return (NULL);
 }
