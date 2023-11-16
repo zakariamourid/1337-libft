@@ -7,7 +7,7 @@ files = ft_strlen ft_memcpy ft_memset ft_bzero ft_memmove ft_memcmp \
 		ft_atoi ft_strnstr  ft_strncmp ft_calloc ft_strdup \
 		ft_itoa ft_strlcpy ft_strlcat ft_strjoin ft_strtrim \
 		ft_putchar_fd ft_putnbr_fd ft_putendl_fd ft_putstr_fd  ft_strmapi ft_striteri \
-		ft_lstsize ft_lstadd_front ft_lstnew
+		ft_lstsize ft_lstadd_front ft_lstadd_back ft_lstnew ft_lstlast ft_lstdelone ft_lstclear
 BNSFILES = ft_lstsize
 BNSCFILES = ft_lstsize.c
 BNSOFILES = ft_lstsize.o

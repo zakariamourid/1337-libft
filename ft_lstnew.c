@@ -6,13 +6,13 @@
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 22:04:48 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/14 22:51:47 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:54:20 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstew(void *content)
+t_list *ft_lstnew(void *content)
 {
 	t_list *new;
 
