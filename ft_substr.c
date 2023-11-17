@@ -6,7 +6,7 @@
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 02:58:08 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/11 16:14:27 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/17 02:27:19 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
-	size_t	i;
-
-	i = 0;
+	if(!s)
+		return NULL;
+	if(!*s || !len)
+		return ft_strdup("");
 	if (start >= ft_strlen(s) || !len)
 	{
 		str = (char *)malloc(1);
@@ -34,3 +35,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(str, s + start, len + 1);
 	return (str);
 }
+
