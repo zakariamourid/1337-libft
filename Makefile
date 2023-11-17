@@ -1,27 +1,30 @@
 CC = cc
-FLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 NAME = libft.a
-files = ft_strlen ft_memcpy ft_memset ft_bzero ft_memmove ft_memcmp \
-		ft_memchr ft_isalpha ft_isdigit ft_isalnum ft_isascii  \
-		ft_isprint ft_toupper ft_tolower ft_strchr ft_strrchr \
-		ft_atoi ft_strnstr  ft_strncmp ft_calloc ft_strdup \
-		ft_itoa ft_strlcpy ft_strlcat ft_strjoin ft_strtrim ft_substr\
-		ft_putchar_fd ft_putnbr_fd ft_putendl_fd ft_putstr_fd  ft_strmapi ft_striteri \
+CFILES = ft_strlen.c ft_memcpy.c ft_memset.c ft_bzero.c ft_memmove.c ft_memcmp.c \
+		ft_memchr.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c  \
+		ft_isprint.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \
+		ft_atoi.c ft_strnstr.c  ft_strncmp.c ft_calloc.c ft_strdup.c \
+		ft_itoa.c ft_strlcpy.c ft_strlcat.c ft_strjoin.c ft_strtrim.c ft_substr.c\
+		ft_putchar_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_putstr_fd.c  ft_strmapi.c ft_striteri.c \
 
-BNSFILES=ft_lstsize_bonus  ft_lstadd_front_bonus ft_lstadd_back_bonus ft_lstnew_bonus ft_lstlast_bonus ft_lstdelone_bonus ft_lstclear_bonus
-BNSCFILES = $(addsuffix .c , $(BNSFILES))
-BNSOFILES = $(addsuffix .o , $(BNSFILES))
-CFILES := $(addsuffix .c , $(files))
-OFILES := $(addsuffix .o , $(files))
+BNSCFILES=ft_lstsize_bonus.c  ft_lstadd_front_bonus.c\
+	  ft_lstadd_back_bonus.c ft_lstnew_bonus.c \
+	  ft_lstlast_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c
+
+OFILES = $(CFILES:.c=.o)
+BNSOFILES =$(BNSCFILES:.c=.o)
+
+.PHONY: all bonus clean fclean
 all: $(NAME)
 $(NAME):$(OFILES)
 	ar rcs $(NAME) $(OFILES)
-$(OFILES) : $(CFILES)
-	$(CC) $(FLAGS) -c $(CFILES)
-$(BNSOFILES) : $(BNSCFILES)
-	$(CC) $(FLAGS) -c $(BNSCFILES)
-	ar rcs $(NAME) $(BNSOFILES)
 bonus : $(BNSOFILES)
+
+$(BNSOFILES):$(BNSCFILES)
+	$(CC) $(CFLAGS) -c $(BNSCFILES)
+	ar rcs $(NAME) $(BNSOFILES)
+
 clean: 
 	rm -rf $(OFILES) $(BNSOFILES)
 fclean: clean 
