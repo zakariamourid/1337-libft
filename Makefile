@@ -10,7 +10,8 @@ CFILES = ft_strlen.c ft_memcpy.c ft_memset.c ft_bzero.c ft_memmove.c ft_memcmp.c
 
 BNSCFILES=ft_lstsize_bonus.c  ft_lstadd_front_bonus.c\
 	  ft_lstadd_back_bonus.c ft_lstnew_bonus.c \
-	  ft_lstlast_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c
+	  ft_lstlast_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c\
+	  ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 OFILES = $(CFILES:.c=.o)
 BNSOFILES =$(BNSCFILES:.c=.o)
@@ -18,12 +19,12 @@ BNSOFILES =$(BNSCFILES:.c=.o)
 .PHONY: all bonus clean fclean
 all: $(NAME)
 $(NAME):$(OFILES)
-	ar rcs $(NAME) $(OFILES)
+	ar rc $(NAME) $(OFILES)
 bonus : $(BNSOFILES)
 
 $(BNSOFILES):$(BNSCFILES)
 	$(CC) $(CFLAGS) -c $(BNSCFILES)
-	ar rcs $(NAME) $(BNSOFILES)
+	ar rc $(NAME) $(BNSOFILES)
 
 clean: 
 	rm -rf $(OFILES) $(BNSOFILES)

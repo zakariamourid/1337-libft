@@ -6,14 +6,12 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 23:18:30 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/14 16:47:29 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/17 19:32:42 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-int	count_words(char const *s, char c)
+#include "libft.h"
+static int	count_words(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -37,29 +35,48 @@ int	count_words(char const *s, char c)
 	}
 	return (count);
 }
+static int	word_len(char const *s,char c)
+{
+	int	i;
+	i = 0;
+	while(s[i] != c && s[i])
+		i++;
+	return (i);
+}
 
-int	*ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		len;
+	int		word;
+	int		i;
 	char	**str;
 
 	len = count_words(s, c);
+	i = 0;
 	str = (char **)malloc(sizeof(char *) * (len+ 1));
 	if(!str)
 		return (NULL);
-	printf(" len = %d \n ", len);
-	while (*str == c)
-		str++;
-	while (*str)
+	word = 0;
+	while (word < len)
 	{
-		
+		while(s[i] == c && s[i])
+			i++;
+		str[word] = ft_substr(s,i,word_len(&s[i],c));
+		while(s[i] != c && s[i])
+			i++;
+		word++;
 	}
-	return (NULL);
+	return (str);
 }
-int	main(void)
+/*
+int	main(int ac,char **av)
 {
-	char	str[];
-
-	str[] = "hello,world";
-	ft_split(str, ',');
+	int i =0;
+	char **spl=(char **)ft_split(av[1],av[2][0] );
+	while( spl[i])
+	{
+		printf(" %d = %s \n",i,spl[i]);
+		i++;
+	}
 }
+*/

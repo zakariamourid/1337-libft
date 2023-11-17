@@ -1,7 +1,7 @@
 #include "libft.h"
 void clear_content(void *a)
 {
-	free(a);
+	return ;
 }
 
 int main()
@@ -34,4 +34,6 @@ int main()
 	printf(" last node (%p)=> content = (%d) \n",last_node,*((int *)last_node->content)); 
 	printf("lst size is = %d \n " ,ft_lstsize(head));
 	ft_lstclear(&head,clear_content);
+	if(!head)
+		printf("list is cleared bro!!! \n");
 }
