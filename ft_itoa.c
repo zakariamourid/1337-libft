@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-static int	get_size(int n)
+static int	get_size(long n)
 {
 	int	i;
 
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 
 	is_negative = 0;
 	nbr = n;
-	len = get_size(n);
+	len = get_size(nbr);
 	res = (char *)malloc(len + 1);
 	if (!res)
 		return (NULL);

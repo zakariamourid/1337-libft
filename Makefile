@@ -15,17 +15,13 @@ CFILES := $(addsuffix .c , $(files))
 OFILES := $(addsuffix .o , $(files))
 all: $(NAME)
 $(NAME):$(OFILES)
-	ar rc $(NAME) $(OFILES)
-	ranlib $(NAME)
+	ar rcs $(NAME) $(OFILES)
 $(OFILES) : $(CFILES)
 	$(CC) $(FLAGS) -c $(CFILES)
 $(BNSOFILES) : $(BNSCFILES)
 	$(CC) $(FLAGS) -c $(BNSCFILES)
+	ar rcs $(NAME) $(BNSOFILES)
 bonus : $(BNSOFILES)
-	ar rc $(NAME) $(BNSOFILES)
-	ranlib $(NAME)
-main: all
-	$(CC) $(FLAGS) main.c -L. -lft -o main
 clean: 
 	rm -rf $(OFILES) $(BNSOFILES)
 fclean: clean 
