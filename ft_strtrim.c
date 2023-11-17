@@ -6,7 +6,7 @@
 /*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:45:14 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/14 21:59:50 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/17 20:49:05 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!*set || *s1 == 0)
 		return (ft_strdup(s1));
 	s_len = ft_strlen(s1);
-	end = s_len - 1;
+	end = s_len;
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))    
 		start++;
 	if(start == s_len)
 		return (ft_strdup(""));
-	while (ft_strchr(set, s1[end]))
+	while (ft_strchr(set, s1[end - 1]))
 		end--;
-	str = malloc(sizeof(char) * (end - start + 2));
+	str = malloc(sizeof(char) * (end - start + 1));
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s1 + start, end - start + 2);
+	ft_strlcpy(str, s1 + start, end - start + 1);
 	return ((char *)str);
 }
