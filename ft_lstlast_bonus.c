@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zmourid <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 22:30:26 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/16 14:08:43 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/18 00:30:34 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	while(lst)
+	while (lst)
 	{
-		if(lst->next == NULL)
-			return lst;
+		if (lst->next == NULL)
+			return (lst);
 		lst = lst->next;
 	}
-	return NULL;
+	return (NULL);
 }

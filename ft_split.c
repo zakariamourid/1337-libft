@@ -6,11 +6,12 @@
 /*   By: zmourid <zmourid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 23:18:30 by zmourid           #+#    #+#             */
-/*   Updated: 2023/11/17 20:49:32 by zmourid          ###   ########.fr       */
+/*   Updated: 2023/11/18 01:04:12 by zmourid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static int	count_words(char const *s, char c)
 {
 	int	i;
@@ -35,49 +36,58 @@ static int	count_words(char const *s, char c)
 	}
 	return (count);
 }
-static int	word_len(char const *s,char c)
+
+static int	word_len(char const *s, char c)
 {
 	int	i;
+
 	i = 0;
-	while(s[i] != c && s[i])
+	while (s[i] != c && s[i])
 		i++;
 	return (i);
 }
 
-
-char	**ft_split(char const *s, char c)
+static void	free_array(char **str, int len)
 {
-	int		len;
-	int		word;
-	int		i;
-	char	**str;
+	while (len--)
+		free(str[len]);
+	free(str);
+}
 
-	if(!s)
-		return (NULL);
-	len = count_words(s, c);
+static char	**ft_split2(char const *s, char **str, int word, char c)
+{
+	int	i;
+
 	i = 0;
-	str = (char **)malloc(sizeof(char *) * (len+ 1));
-	if(!str)
-		return (NULL);
-	word = 0;
-	while (word < len)
+	while (word < count_words(s, c))
 	{
-		while(s[i] == c && s[i])
+		while (s[i] == c && s[i])
 			i++;
-		str[word] = ft_substr(s,i,word_len(&s[i],c));
-		while(s[i] != c && s[i])
+		str[word] = ft_substr(s, i, word_len(&s[i], c));
+		if (!str[word])
+		{
+			free_array(str, word);
+			return (NULL);
+		}
+		while (s[i] != c && s[i])
 			i++;
 		word++;
 	}
+	str[word] = NULL;
 	return (str);
 }
-int	main(int ac,char **av)
+
+char	**ft_split(char const *s, char c)
 {
-	int i =0;
-	char **spl=(char **)ft_split(av[1],av[2][0] );
-	while( spl[i])
-	{
-		printf(" %d = %s \n",i,spl[i]);
-		i++;
-	}
+	int		word;
+	char	**str;
+
+	if (!s)
+		return (NULL);
+	str = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!str)
+		return (NULL);
+	word = 0;
+	str = ft_split2(s, str, word, c);
+	return (str);
 }
